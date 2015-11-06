@@ -21,8 +21,17 @@
         <div id="map"></div>
       </div>
       <div class="col-md-6">
-        <h2>Earthquakes in the Past Week</h2>
-        <div id="quakes-list"></div>
+        <h1>Earthquakes in the Past Week</h1>
+        <div id="quakes-list">
+          <script type="text/x-handlebars-template" id="quakes-template">
+            {{#each quakes}}
+              <h3>{{properties.title}}</h3>
+              <p>Coordinates:  {{geometry.coordinates.[1]}}, {{geometry.coordinates.[0]}}</p>
+              <p>Time:  {{properties.time}}</p>
+              <p>Magnitude:  {{properties.mag}}</p>
+            {{/each}}
+          </script>
+        </div>
       </div>
     </div>
   </div>
@@ -36,9 +45,9 @@
   <!-- handlebars -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.min.js"></script>
 
-  <!-- google maps -->
+  <!-- google maps
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-
+-->
   <!-- custom script -->
   <script type="text/javascript" src="main.js"></script>
 </body>
